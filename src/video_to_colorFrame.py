@@ -1,8 +1,9 @@
-import cv2
-import os
+# coding:utf-8
 
 
 def save_all_frames(video_file_path, distDir_path, basename, ext='jpg'):
+    import os
+    import cv2
     cap = cv2.VideoCapture(video_file_path)
 
     print(cap.isOpened())
