@@ -1,17 +1,17 @@
 # coding:utf-8
+import cv2
+import os
+from config import *
 
 
-def save_all_frames(video_file_path, distDir_path, basename, ext='jpg'):
-    import os
-    import cv2
-    cap = cv2.VideoCapture(video_file_path)
+def convert():
+    cap = cv2.VideoCapture(videoDataPath)
 
-    print(cap.isOpened())
     if not cap.isOpened():
         return
 
-    os.makedirs(distDir_path, exist_ok=True)
-    base_path = os.path.join(distDir_path, basename)
+    os.makedirs(destDirPath, exist_ok=True)
+    base_path = os.path.join(destDirPath, basename)
 
     digit = len(str(int(cap.get(cv2.CAP_PROP_FRAME_COUNT))))
 
@@ -24,3 +24,7 @@ def save_all_frames(video_file_path, distDir_path, basename, ext='jpg'):
             n += 1
         else:
             return
+
+
+if __name__ == '__main__':
+    convert()
