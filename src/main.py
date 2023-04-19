@@ -6,7 +6,6 @@ def save_all_frames(video_file_path, distDir_path, basename, ext='jpg'):
     import cv2
     cap = cv2.VideoCapture(video_file_path)
 
-    print(cap.isOpened())
     if not cap.isOpened():
         return
 
@@ -25,6 +24,6 @@ def save_all_frames(video_file_path, distDir_path, basename, ext='jpg'):
         else:
             return
 
-if __name__ == "__name__":
+if __name__ == "__main__":
     basename = "badapple"
     save_all_frames(videoDataPath, destDirPath, basename)
